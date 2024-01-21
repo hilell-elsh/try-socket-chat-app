@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Starter Snowpack App" />
     <title>Starter Snowpack App</title>
+    <script src="script.js" type="module"></script>
+    <style>
+      body {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 90%;
+        max-width: 1200px;
+      }
+  
+      #msg-container {
+        border: 1px solid black;
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+  
+      #msg-container div {
+        background-color: #CCC;
+        padding: 5px;
+      }
+  
+      #msg-container div:nth-child(2n) {
+        background-color: #FFF;
+      }
+  
+      #send-container {
+        position: fixed;
+        padding-bottom: 30px;
+        bottom: 0;
+        background-color: white;
+        max-width: 1200px;
+        width: 80%;
+        display: flex;
+      }
+  
+      #msg-input {
+        flex-grow: 1;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to Snowpack!</h1>
+    <div id="msg-container"></div>
+    <form id="form">
+      <label for="msg-input">msg</label>
+      <input type="text" id="msg-input">
+      <button type="submit" id="send-btn">Send</button>
+      <label for="room-input">Room</label>
+      <input type="text" id="room-input">
+      <button type="submit" id="room-btn">Join</button>
+    </form>
   </body>
 </html>

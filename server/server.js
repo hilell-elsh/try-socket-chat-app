@@ -1,12 +1,11 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-
-app.get('/', (req, res) => {
-    console.log("Basic GET request")
-    res.send("Hello World")
+const io = require('socket.io')(3000, {
+    cors: {
+        origin: ['http://localhost:8080']
+    }
 })
 
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`)
-});
+io.on('connection', socket => {
+    console.log(socket.id);
+})
+
+console.log('server run')

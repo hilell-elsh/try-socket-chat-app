@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "snowpack": "^3.8.8"
+    "snowpack": "^3.7.1"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.7.4"
   }
 }
